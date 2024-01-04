@@ -1,8 +1,7 @@
-#include<iostream>
-
+#include <iostream>
 using namespace std;
 
-int gcd(int a, int b) { //최대 공약수
+int func(int a, int b) {
 	int r = a % b;
 
 	while (r != 0) {
@@ -13,18 +12,13 @@ int gcd(int a, int b) { //최대 공약수
 	return b;
 }
 
-int lcm(int a, int b) { //최소 공배수
-	return (a * b) / gcd(a, b);
-}
-
-int main(void) {
-
+int main() {
 	int a, b;
-
 	cin >> a >> b;
+	int A, B; //최대공약수, 최소공배수
+	A = func(a, b);
+	B = a * b / func(a, b);
 
-	cout << gcd(a, b) << endl;
-	cout << lcm(a, b) << endl;
-
-	return 0;
+	cout << A << endl
+		<< B << endl;
 }
