@@ -39,10 +39,7 @@ int solution(vector<vector<int>> maps)
             if(maps[next.X][next.Y]==0) 
                 continue;
             
-            if(vis[next.X][next.Y]==0)
-                vis[next.X][next.Y]=vis[cur.X][cur.Y]+1;
-            else 
-                vis[next.X][next.Y]=min(vis[cur.X][cur.Y]+1, vis[next.X][next.Y]);
+            vis[next.X][next.Y]=vis[cur.X][cur.Y]+1;
             
             q.push({next.X, next.Y});
         }
