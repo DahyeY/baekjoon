@@ -15,15 +15,10 @@ int solution(vector<vector<int>> routes) {
     // 카메라 벗어나면 다음 요소 종점으로 카메라 위치 변경
     
     sort(routes.begin(), routes.end(), cmp);
-    int camera = -3001;
-    vector<int> visit(routes.size(), 0);
-    
-    for(int i=0; i<routes.size(); i++){
-        if(visit[i]) continue;
-        if(camera >= routes[i][0] && camera <= routes[i][1]) {
-            visit[i] = 1; 
-        }else{
-            camera = routes[i][1];
+    int camera = -30001;    
+    for(auto route : routes){
+        if(route[0] > camera) {
+            camera = route[1];
             answer++;
         }
         
